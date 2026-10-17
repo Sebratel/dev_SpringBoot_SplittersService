@@ -1,0 +1,115 @@
+[
+  {
+    "method": "POST",
+    "path": "/api/v1/splitters/alertas-protocolo-pendente",
+    "service": "splitters",
+    "auth": "authenticated",
+    "safe": true,
+    "handler": "SplittersController#alertasProtocoloPendente",
+    "pathVariables": [],
+    "queryParams": [],
+    "headers": [],
+    "body": "AlertaProtocoloPendenteInputDTO"
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/splitters/listarConnections",
+    "service": "splitters",
+    "auth": "authenticated",
+    "safe": true,
+    "handler": "SplittersController#listarConnections",
+    "pathVariables": [],
+    "queryParams": [],
+    "headers": [],
+    "body": null
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/splitters/listarOlts",
+    "service": "splitters",
+    "auth": "authenticated",
+    "safe": true,
+    "handler": "SplittersController#listarOlts",
+    "pathVariables": [],
+    "queryParams": [],
+    "headers": [],
+    "body": null
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/splitters/listarSplitters",
+    "service": "splitters",
+    "auth": "authenticated",
+    "safe": true,
+    "handler": "SplittersController#listarSplitters",
+    "pathVariables": [],
+    "queryParams": [],
+    "headers": [],
+    "body": null
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/splitters/listarSplitters-paginado",
+    "service": "splitters",
+    "auth": "authenticated",
+    "safe": true,
+    "handler": "SplittersController#listarSplittersPaginado",
+    "pathVariables": [],
+    "queryParams": [
+      {
+        "name": "inicio",
+        "type": "int",
+        "required": false,
+        "default": "0"
+      },
+      {
+        "name": "quantidade",
+        "type": "int",
+        "required": false,
+        "default": "20"
+      }
+    ],
+    "headers": [],
+    "body": null
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/splitters/recuperarToken",
+    "service": "splitters",
+    "auth": "authenticated",
+    "safe": true,
+    "handler": "SplittersController#recuperarTokenDoUsuarioIntegradorElleven",
+    "pathVariables": [],
+    "queryParams": [],
+    "headers": [],
+    "body": null
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/splitters/solicitacoes/cliente/{clientId}",
+    "service": "splitters",
+    "auth": "authenticated",
+    "safe": true,
+    "handler": "SplittersController#recuperarSolicitacoesDeUmCliente",
+    "pathVariables": [
+      "clientId"
+    ],
+    "queryParams": [],
+    "headers": [],
+    "body": null
+  },
+  {
+    "method": "GET",
+    "path": "/api/v1/splitters/{splitterId}",
+    "service": "splitters",
+    "auth": "authenticated",
+    "safe": true,
+    "handler": "SplittersController#listarSplitterPeloId",
+    "pathVariables": [
+      "splitterId"
+    ],
+    "queryParams": [],
+    "headers": [],
+    "body": null
+  }
+]
