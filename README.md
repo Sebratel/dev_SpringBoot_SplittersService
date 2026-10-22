@@ -8,7 +8,7 @@ Serviço **splitters-service**, porta **8102**, atrás do `dev_SpringBoot_Gatewa
 > **Estado: esqueleto.** Sobe, expõe `/actuator/health` (público; o resto exige JWT) e tem build, Checkstyle e JaCoCo ativos, mas **a lógica ainda está no
 > monólito**. As rotas abaixo são o contrato que este serviço precisa atender, idêntico ao do BFF atual (`contract/routes.json`).
 
-## Rotas que este serviço deve atender (8)
+## Rotas que este serviço deve atender (9)
 
 | Método | Rota | Acesso |
 |---|---|---|
@@ -18,6 +18,7 @@ Serviço **splitters-service**, porta **8102**, atrás do `dev_SpringBoot_Gatewa
 | `GET` | `/api/v1/splitters/listarSplitters` | autenticada |
 | `GET` | `/api/v1/splitters/listarSplitters-paginado` | autenticada |
 | `GET` | `/api/v1/splitters/recuperarToken` | autenticada |
+| `POST` | `/api/v1/splitters/rotas-por-pppoe` | autenticada |
 | `GET` | `/api/v1/splitters/solicitacoes/cliente/{clientId}` | autenticada |
 | `GET` | `/api/v1/splitters/{splitterId}` | autenticada |
 
