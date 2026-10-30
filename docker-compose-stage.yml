@@ -2,15 +2,21 @@
 # (workflow staging-image.yml) e publicada no GHCR; o Portainer so a baixa.
 # Rede PRIVADA "gateway-backend": so o API Gateway e os 6 servicos estao nela. Os servicos NAO ficam na rede "proxy"
 # (compartilhada com antifraude, dho, hub, kibana etc.): so o gateway recebe chamadas deles. Nenhum servico publica porta.
+# Nome da stack = nome do repositorio em minusculas (o Compose recusa maiusculas); ver .github/scripts/validate-compose.py.
+# O servico se chama pelo PAPEL (backend); o gateway o alcanca pelo alias de rede "splitters-service" (o nome "backend"
+# sozinho colidiria com os demais servicos da rede gateway-backend).
+name: dev_springboot_splittersservice
+
 services:
-  splitters-service:
+  backend:
     image: ghcr.io/sebratel/splitters-service:staging
     pull_policy: always
-    container_name: splitters-service-stage
     restart: unless-stopped
     mem_limit: 1g
     networks:
-      - backend
+      backend:
+        aliases:
+          - splitters-service
     environment:
       - SERVER_PORT=8102
       - APP_ENV=staging

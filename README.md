@@ -49,8 +49,9 @@ Variáveis de ambiente: ver `.env.example` (nunca commite o `.env`).
 ## Deploy em staging (Portainer)
 
 Stack criada **a partir do Git**: repositório `https://github.com/Sebratel/dev_SpringBoot_SplittersService`, branch `staging`,
-arquivo `docker-compose-stage.yml`. O container se chama `splitters-service-stage` e fica na rede externa `proxy`.
-Sem porta publicada no host: só o gateway, na rede `proxy`, alcança este serviço.
+arquivo `docker-compose-stage.yml`. A stack se chama `dev_springboot_splittersservice` e o serviço `backend`
+(container `dev_springboot_splittersservice-backend-1`); fica na rede externa `gateway-backend`, com o alias `splitters-service`.
+Sem porta publicada no host: só o gateway, na rede `gateway-backend`, alcança este serviço em `http://splitters-service:8102`.
 
 A imagem `ghcr.io/sebratel/splitters-service:staging` é construída pelo GitHub Actions (`.github/workflows/staging-image.yml`, a cada push em `staging`) a partir
 do `Dockerfile` (multi-stage, Temurin 21, usuário não-root) e publicada no GHCR; o Portainer só a baixa. Construir a imagem dentro do host
